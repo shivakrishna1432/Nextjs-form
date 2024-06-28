@@ -3,9 +3,9 @@
 import SocialLoginForm from "./SocialLogin";
 
 import { CredentialLogin } from "@/app/actions";
+import { auth } from "@/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 const LoginForm = () => {
   const [error, setError] = useState("");
   const router = useRouter();
@@ -29,7 +29,7 @@ const LoginForm = () => {
     <div>
       <div className="text-xl text-center text-red-500">{error}</div>
       <form className="my-4" onSubmit={handleSubmit}>
-        <div className="my-4">
+        <div className="my-6">
           <label htmlFor="email" className="inline-block w-[116px]">
             Email Address :
           </label>
@@ -40,7 +40,7 @@ const LoginForm = () => {
             name="email"
           />
         </div>
-        <div className="my-4">
+        <div className="my-6">
           <label htmlFor="password" className="inline-block w-[116px]">
             Password :
           </label>
